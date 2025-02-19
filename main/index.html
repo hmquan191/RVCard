@@ -53,6 +53,68 @@
         </div>
 
     </div>
+    <div class="achievement-field">
+        <div class="left-section">
+            <div class="award">
+                <div class="award-title">Circle Chart Music Awards</div>
+                <div class="award-count">4 Wins</div>
+            </div>
+            <div class="award">
+                <div class="award-title">Golden Disc Awards</div>
+                <div class="award-count">5 Wins</div>
+            </div>
+            <div class="award">
+                <div class="award-title">Melon Music Awards</div>
+                <div class="award-count">4 Wins</div>
+            </div>
+            <div class="award">
+                <div class="award-title">Mnet Asian Music Awards</div>
+                <div class="award-count">2 Wins</div>
+            </div>
+            <div class="award">
+                <div class="award-title">Music Show Total Wins</div>
+                <div class="award-count">84 Wins</div>
+            </div>
+            <div class="award">
+                <div class="award-title">First Win</div>
+                <div class="award-count">ICC - March 25, 2015</div>
+            </div>
+            <div class="award">
+                <div class="award-title">First Triple Crown</div>
+                <div class="award-count">Psycho - January 18, 2020</div>
+            </div>
+
+            <div class="award">
+                <div class="award-title">Most Awarded Song</div>
+                <div class="award-count">Power Up - 10 Wins</div>
+            </div>
+
+        </div>
+        <div class="right-section">
+            <div class="title">Achievement</div>
+            <div class="sub-title">Red Velvet has won multiple prestigious awards in the music industry.</div>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const leftSection = document.querySelector('.left-section');
+            const rightSection = document.querySelector('.right-section');
+            const achievementField = document.querySelector('.achievement-field');
+            const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                leftSection.classList.add('visible');
+                rightSection.classList.add('visible');
+                } else {
+                leftSection.classList.remove('visible');
+                rightSection.classList.remove('visible');
+                }
+            });
+            });
+            observer.observe(achievementField);
+        });
+    </script>
     <script src="script.js""></script>
 </body>
 </html>

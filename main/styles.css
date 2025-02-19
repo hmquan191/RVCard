@@ -137,3 +137,74 @@ button:hover {
   background-color: #ffa38c;
   color: black;
 }
+
+.visible {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.hidden {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Achievement style */
+.achievement-field {
+  padding-top: 50px;
+  width: 100%;
+  height: 400vh; /* Đảm bảo đủ nội dung để có hiệu ứng cuộn */
+  position: relative;
+  background: white;
+  display: flex;
+}
+
+.left-section {
+  height: 100vh;
+  flex-basis: 50%;
+  position: sticky;
+  top: 0;
+  display: list-item;
+  align-items: center;
+  justify-content: center;
+  background: black; /* Nền tối để làm nổi bật nội dung */
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.right-section {
+  height: 100vh;
+  flex-basis: 50%;
+  position: relative; /* Để nội dung cuộn */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 40vh; /* Khoảng cách giữa các mục */
+  padding-left: 50px;
+}
+
+.award {
+  background: rgba(0, 0, 0, 0.8); /* Nền tối mờ */
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease-in-out;
+  padding: 18px;
+}
+
+.award:hover {
+  color: pink;
+}
+
+.award-title {
+  font-weight: bold;
+  font-size: 1.8rem;
+}
+
+.award-count {
+  font-size: 1.3rem;
+  color: #ffcc00; /* Màu vàng nổi bật */
+}
