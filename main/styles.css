@@ -150,7 +150,7 @@ button:hover {
 
 /* Achievement style */
 .achievement-field {
-  padding-top: 50px;
+  padding-top: 150px;
   width: 100%;
   height: 320vh; /* Đảm bảo đủ nội dung để có hiệu ứng cuộn */
   position: relative;
@@ -164,8 +164,46 @@ button:hover {
   font-size: 25px;
 }
 
+.achievement-title {
+  margin-top: -150px;
+  width: 420px;
+  font-size: 100px;
+  font-family: poppins;
+  font-weight: 700;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+  gap: 10px;
+}
+
+.achievement-title.visible {
+  opacity: 1; /* Hiện khi cuộn đến */
+  transform: translateY(0);
+}
+
+.right-section {
+  height: 300vh;
+  flex-basis: 50%;
+  position: sticky; /* Để nội dung cuộn */
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 35vh; /* Khoảng cách giữa các mục */
+  padding-left: 50px;
+  text-align: left;
+}
+
 .left-section {
-  height: 100vh;
+  /* flex-basis: 50%;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  background: #121212; /* Nền đen sang trọng */
+  /* color: white; */
+  height: 144vh;
   flex-basis: 50%;
   position: sticky;
   top: 0;
@@ -178,67 +216,70 @@ button:hover {
   font-weight: bold;
 }
 
-.right-section {
-  height: 300vh;
-  flex-basis: 50%;
-  position: sticky; /* Để nội dung cuộn */
-  top: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 40vh; /* Khoảng cách giữa các mục */
-  padding-left: 50px;
-  text-align: left;
-}
-
-.achievement-title {
-  width: 420px;
-  font-size: 100px;
-  font-family: poppins;
-  font-weight: 700;
+.award-container {
+  /* padding-top: 50px; */
+  display: grid;
+  /* grid-template-columns: repeat(2, 1fr); 2 cột */
+  gap: 30px;
 }
 
 .award {
-  background: rgba(0, 0, 0, 0.8); /* Nền tối mờ */
-  color: white;
+  background: rgba(255, 255, 255, 0.1); /* Hiệu ứng trong suốt */
   padding: 20px;
-  border-radius: 10px;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
   text-align: center;
-  font-size: 1.5rem;
-  transition: transform 0.3s ease-in-out;
-  padding: 18px;
-}
+  font-size: 1rem;
 
-.award:last-child {
-  border-bottom: none;
+  /* backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .award:hover {
+  transform: scale(1.01);
+  /* box-shadow: 0 15px 30px rgba(255, 192, 203, 0.4); */
   color: pink;
 }
 
 .award-title {
   font-weight: bold;
   font-size: 1.8rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .award-count {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   color: #ffcc00; /* Màu vàng nổi bật */
+  font-weight: 500;
+  margin-top: 5px;
 }
 
 /* glass-field */
 
 /* Container Styling */
 .glass-field {
-  padding-top: 50px;
+  margin-top: -50px;
   width: 100%;
-  height: 100vh;
+  height: 150vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   background: white;
+}
+
+.glass-title {
+  padding-top: 0%;
+  width: 300px;
+  font-size: 100px;
+  font-family: poppins;
+  font-weight: 700;
+  align-items: center;
+  text-align: left;
+  transform: translateY(50px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 
 .glass-container {
@@ -246,10 +287,11 @@ button:hover {
   gap: 20px;
   opacity: 0;
   transform: translateY(50px);
-  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  transition: opacity 0.5s ease-out, transform 0.5s ease-in-out;
 }
 
-.glass-container.visible {
+.glass-container.visible,
+.glass-title.visible {
   opacity: 1;
   transform: translateY(0);
 }
@@ -297,4 +339,42 @@ button:hover {
 
 .glass-card:hover img:nth-child(2) {
   opacity: 1;
+}
+
+/* credit */
+.credit-container {
+  width: 100%;
+  text-align: center;
+  padding: 50px 20px;
+  position: relative;
+  bottom: 0;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+  font-family: "Poppins", sans-serif;
+}
+
+.credit-text {
+  font-size: 20px;
+  font-weight: 500;
+  color: rgba(255, 0, 0, 0.7);
+}
+
+.credit-link {
+  font-size: 24px;
+  font-weight: 700;
+  color: #15dab2;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+}
+
+.credit-link:hover {
+  color: #ff007f;
+  /* text-shadow: 0px 0px 10px rgba(255, 0, 127, 0.8); */
+}
+
+/* Hiện lên khi người dùng cuộn đến */
+.credit-container.visible {
+  opacity: 1;
+  transform: translateY(0);
 }

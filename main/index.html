@@ -55,14 +55,16 @@
     </div>
     <div class="achievement-field">
         <div class="left-section">
+            <div class="award-container">
+                <div class="award">
+                    <div class="award-title">First Win</div>
+                    <div class="award-count">ICC - March 25, 2015</div>
+                </div>
             <div class="award">
                 <div class="award-title">Music Show Total Wins</div>
                 <div class="award-count">84 Wins</div>
             </div>
-            <div class="award">
-                <div class="award-title">First Win</div>
-                <div class="award-count">ICC - March 25, 2015</div>
-            </div>
+
             <div class="award">
                 <div class="award-title">First Triple Crown</div>
                 <div class="award-count">Psycho - January 18, 2020</div>
@@ -89,16 +91,35 @@
                 <div class="award-title">Mnet Asian Music Awards</div>
                 <div class="award-count">2 Wins</div>
             </div>
-
+        </div>
         </div>
         <div class="right-section">
             <div class="achievement-title">Achievement</div>
-            <!-- <div class="achievement-sub-title">Red Velvet has won multiple prestigious awards in the music industry.</div> -->
-            <div class="achievement-sub-title">"I want the people I like to remember me as a warm person. <br/>That's how I want to be remebered"</div>
+            <div class="achievement-sub-title">Red Velvet has won multiple prestigious awards in the music industry.</div>
+            <div class="achievement-sub-title">"I want the people I like to remember me as a warm person. <br/>That's how I want to be remebered."</div>
             <div class="achievement-sub-title">"Sometimes, someone comes into your life unexpectedly, takes you heart by surprise and changes your life forever. Well, for me and for all Red Velvet, it’s you guys. ReVeluv."</div>
             <div class="achievement-sub-title">"Instead of reaching the top or going higher. We want to do songs that we want or the fans want."</div>
             <div class="achievement-sub-title">"Don’t give up on anything. Just do what you wanna do. We’ve got your back."</div>
         </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const achievementTitle = document.querySelector('.achievement-title');
+        
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        achievementTitle.classList.remove('hidden');
+                        achievementTitle.classList.add('visible');
+                    } else {
+                        achievementTitle.classList.remove('visible');
+                        achievementTitle.classList.add('hidden');
+                    }
+                });
+            }, { threshold: 0.5 }); // Kích hoạt khi 50% phần tử hiển thị
+        
+            observer.observe(achievementTitle);
+        });
+    </script>
     </div>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -119,6 +140,9 @@
     </script>
 
     <div class="glass-field">
+        <div class="glass-title">
+            5 PIECES 1 DIRECTION
+        </div>
         <div class="glass-container">
             <div class="glass-card">
                 <img src="irene_glass.jpg" alt="Irene" class="default-img">
@@ -146,21 +170,55 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const glassContainer = document.querySelector('.glass-container');
+            const glassTitle = document.querySelector('.glass-title');
             const achievementField = document.querySelector('.glass-field');
             const observer = new IntersectionObserver(entries => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
+                        glassTitle.classList.remove('hidden');
+                        glassTitle.classList.add('visible');
+
+                        glassContainer.classList.remove('hidden');
                         glassContainer.classList.add('visible');
                     }
                     else{
+                        glassTitle.classList.remove('visible');
+                        glassTitle.classList.add('hidden');
+
                         glassContainer.classList.remove('visible');
                         glassContainer.classList.add('hidden');
                     }
                 });
-            });
+            },{threshold: 0.4});
             observer.observe(achievementField);
         });
     </script>
+
+    <div class="credit-container">
+        <!-- <p class="credit-text">Created by</p> -->
+        <a href="https://www.instagram.com/liam.quan_6/" target="_blank" rel="noopener noreferrer" class="credit-link">@liam.quan_6</a>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const creditSection = document.querySelector('.credit-container');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    creditSection.classList.remove('hidden');
+                    creditSection.classList.add('visible');
+                } else{
+                    creditSection.classList.remove('visible');
+                    creditSection.classList.add('hidden');
+                }
+            });
+        });
+
+        observer.observe(creditSection);
+    });
+    </script>
+
     <script src="script.js""></script>
+
 </body>
 </html>
