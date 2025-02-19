@@ -28,7 +28,7 @@
     <div class="stack-area">
         <div class="left">
             <div class="title">Red Velvet</div>
-            <div class="sub-title">Red Velvet is a South Korean K-pop girl group that debuted in 2014. They are known for their dual concept of "red" and "velvet". The group's music reflects this concept, with the "red" side being brighter and more pop, and the "velvet" side being more mature and R&B-influenced. </div>
+            <div class="sub-title">Red Velvet is a South Korean<br/> K-pop girl group that debuted in 2014. They are known for their dual concept of "red" and "velvet". The group's music reflects this concept, with the "red" side being brighter and more pop, and the "velvet" side being more mature and R&B-influenced. </div>
             <button type="button">Click Me</button>
         </div>
         <div class="right">
@@ -56,22 +56,6 @@
     <div class="achievement-field">
         <div class="left-section">
             <div class="award">
-                <div class="award-title">Circle Chart Music Awards</div>
-                <div class="award-count">4 Wins</div>
-            </div>
-            <div class="award">
-                <div class="award-title">Golden Disc Awards</div>
-                <div class="award-count">5 Wins</div>
-            </div>
-            <div class="award">
-                <div class="award-title">Melon Music Awards</div>
-                <div class="award-count">4 Wins</div>
-            </div>
-            <div class="award">
-                <div class="award-title">Mnet Asian Music Awards</div>
-                <div class="award-count">2 Wins</div>
-            </div>
-            <div class="award">
                 <div class="award-title">Music Show Total Wins</div>
                 <div class="award-count">84 Wins</div>
             </div>
@@ -89,28 +73,90 @@
                 <div class="award-count">Power Up - 10 Wins</div>
             </div>
 
+            <div class="award">
+                <div class="award-title">Golden Disc Awards</div>
+                <div class="award-count">5 Wins</div>
+            </div>
+            <div class="award">
+                <div class="award-title">Circle Chart Music Awards</div>
+                <div class="award-count">4 Wins</div>
+            </div>
+            <div class="award">
+                <div class="award-title">Melon Music Awards</div>
+                <div class="award-count">4 Wins</div>
+            </div>
+            <div class="award">
+                <div class="award-title">Mnet Asian Music Awards</div>
+                <div class="award-count">2 Wins</div>
+            </div>
+
         </div>
         <div class="right-section">
-            <div class="title">Achievement</div>
-            <div class="sub-title">Red Velvet has won multiple prestigious awards in the music industry.</div>
+            <div class="achievement-title">Achievement</div>
+            <!-- <div class="achievement-sub-title">Red Velvet has won multiple prestigious awards in the music industry.</div> -->
+            <div class="achievement-sub-title">"I want the people I like to remember me as a warm person. <br/>That's how I want to be remebered"</div>
+            <div class="achievement-sub-title">"Sometimes, someone comes into your life unexpectedly, takes you heart by surprise and changes your life forever. Well, for me and for all Red Velvet, it’s you guys. ReVeluv."</div>
+            <div class="achievement-sub-title">"Instead of reaching the top or going higher. We want to do songs that we want or the fans want."</div>
+            <div class="achievement-sub-title">"Don’t give up on anything. Just do what you wanna do. We’ve got your back."</div>
         </div>
     </div>
-    
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const leftSection = document.querySelector('.left-section');
-            const rightSection = document.querySelector('.right-section');
+            const button = document.querySelector('button');
             const achievementField = document.querySelector('.achievement-field');
             const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                leftSection.classList.add('visible');
-                rightSection.classList.add('visible');
-                } else {
-                leftSection.classList.remove('visible');
-                rightSection.classList.remove('visible');
-                }
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        button.classList.add('hidden');
+                    } else {
+                        button.classList.remove('hidden');
+                        button.classList.add('visible');
+                    }
+                });
             });
+            observer.observe(achievementField);
+        });
+    </script>
+
+    <div class="glass-field">
+        <div class="glass-container">
+            <div class="glass-card">
+                <img src="irene_glass.jpg" alt="Irene" class="default-img">
+                <img src="irene_glass_2.jpg" alt="hover-img">
+            </div>
+            <div class="glass-card">
+                <img src="seulgi_glass.jpg" alt="Seulgi" class="default-img">
+                <img src="seulgi_glass_2.jpg" alt="hover-img">
+            </div>
+            <div class="glass-card">
+                <img src="wendy_glass_3.jpg" alt="Wendy" class="default-img">
+                <img src="wendy_glass_2.jpg" alt="hover-img">
+            </div>
+            <div class="glass-card">
+                <img src="joy_glass.jpg" alt="Joy" class="default-img">
+                <img src="joy_glass_2.jpg" alt="hover-img">
+            </div>
+            <div class="glass-card">
+                <img src="yeri_glass.jpg" alt="Yeri" class="default-img">
+                <img src="yeri_glass_2.jpg" alt="hover-img">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const glassContainer = document.querySelector('.glass-container');
+            const achievementField = document.querySelector('.glass-field');
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        glassContainer.classList.add('visible');
+                    }
+                    else{
+                        glassContainer.classList.remove('visible');
+                        glassContainer.classList.add('hidden');
+                    }
+                });
             });
             observer.observe(achievementField);
         });

@@ -16,7 +16,7 @@ body {
 img {
   width: 900px;
   height: 600px;
-  opacity: 0;
+  opacity: 1;
 }
 
 .left {
@@ -152,10 +152,16 @@ button:hover {
 .achievement-field {
   padding-top: 50px;
   width: 100%;
-  height: 400vh; /* Đảm bảo đủ nội dung để có hiệu ứng cuộn */
+  height: 320vh; /* Đảm bảo đủ nội dung để có hiệu ứng cuộn */
   position: relative;
   background: white;
   display: flex;
+}
+
+.achievement-sub-title {
+  width: 400px;
+  font-family: poppins;
+  font-size: 25px;
 }
 
 .left-section {
@@ -173,14 +179,23 @@ button:hover {
 }
 
 .right-section {
-  height: 100vh;
+  height: 300vh;
   flex-basis: 50%;
-  position: relative; /* Để nội dung cuộn */
+  position: sticky; /* Để nội dung cuộn */
+  top: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 40vh; /* Khoảng cách giữa các mục */
   padding-left: 50px;
+  text-align: left;
+}
+
+.achievement-title {
+  width: 420px;
+  font-size: 100px;
+  font-family: poppins;
+  font-weight: 700;
 }
 
 .award {
@@ -195,6 +210,10 @@ button:hover {
   padding: 18px;
 }
 
+.award:last-child {
+  border-bottom: none;
+}
+
 .award:hover {
   color: pink;
 }
@@ -207,4 +226,75 @@ button:hover {
 .award-count {
   font-size: 1.3rem;
   color: #ffcc00; /* Màu vàng nổi bật */
+}
+
+/* glass-field */
+
+/* Container Styling */
+.glass-field {
+  padding-top: 50px;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+}
+
+.glass-container {
+  display: flex;
+  gap: 20px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.glass-container.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Card Styling */
+.glass-card {
+  width: 250px; /* Adjust size */
+  height: 350px; /* Maintain aspect ratio */
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.glass-card:hover {
+  transform: scale(1.05);
+}
+
+/* Images */
+.glass-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Mặc định hiển thị ảnh đầu tiên */
+.glass-card img:nth-child(1) {
+  opacity: 1;
+}
+
+/* Ẩn ảnh thứ hai lúc ban đầu */
+.glass-card img:nth-child(2) {
+  opacity: 0;
+}
+
+/* Khi hover, hiển thị ảnh thứ hai */
+.glass-card:hover img:nth-child(1) {
+  opacity: 0;
+}
+
+.glass-card:hover img:nth-child(2) {
+  opacity: 1;
 }
