@@ -370,7 +370,7 @@ button:hover {
 }
 
 .credit-text {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 500;
   color: rgba(255, 0, 0, 0.7);
 }
@@ -415,10 +415,6 @@ button:hover {
   .achievement-field,
   .glass-field {
     padding: 1rem;
-  }
-
-  .title {
-    font-size: clamp(2rem, 4vw, 3rem);
   }
 
   .card,
