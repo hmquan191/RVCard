@@ -68,3 +68,20 @@ img {
   font-size: 25px;
   margin-top: 30px;
 }
+
+button {
+  margin-top: 20px;
+  height: 100px;
+  width: 400px;
+  border-radius: 10px;
+  font-family: poppins;
+  font-size: 30px;
+  font-weight: 700;
+  color: #ffa38c;
+  background-color: black;
+}
+
+button:hover {
+  background-color: #ffa38c;
+  color: black;
+}
